@@ -10,7 +10,10 @@ const app = express();
 const PORT = 5001;
 const SECRET = process.env.JWT_SECRET || "mysecretkey";
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5001', 'https://kenchashirisha.github.io'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Serve HTML files from the parent folder (1111 MINI)
